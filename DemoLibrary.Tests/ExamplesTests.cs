@@ -19,7 +19,8 @@ namespace DemoLibrary.Tests
         [Fact]
         public void ExampleLoadTextFile_InvalidNameShouldFail()
         {
-            Assert.Throws<System.IO.FileNotFoundException>(()=>Examples.ExampleLoadTextFile("this is a"));
+            //Assert.Throws<System.IO.FileNotFoundException>(()=>Examples.ExampleLoadTextFile("this is a"));
+            Assert.Throws<ArgumentException>("file",() => Examples.ExampleLoadTextFile("this is a"));
         }
     }
 }
