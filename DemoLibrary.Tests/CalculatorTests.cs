@@ -26,5 +26,29 @@ namespace DemoLibrary.Tests
             //assert
             Assert.Equal(expected, actual);
         }
+        [Theory]
+        [InlineData(8,4,2)]
+        public void Divide_SimpleValueShouldCalculate(double x, double y, double expected)
+        {
+            //arrange
+
+            //act
+            double actual = Calculator.Divide(x, y);
+
+            //assert
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void Divide_DivideByZero()
+        {
+            //arrange
+            double expected = 0;
+
+            //act
+            double actual = Calculator.Divide(3, 0);
+
+            //assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
