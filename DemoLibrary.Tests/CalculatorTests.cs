@@ -10,14 +10,18 @@ namespace DemoLibrary.Tests
 {
     public class CalculatorTests
     {
-        [Fact]
-        public void Add_SimpleValueShouldCalculate()
+        //[Fact]
+        [Theory]
+        [InlineData(4,3,7)]
+        [InlineData(21, 3.33, 24.33)]
+        [InlineData(double.MaxValue,5,double.MaxValue)]
+        public void Add_SimpleValueShouldCalculate(double x,double y,double expected)
         {
             //arrange
-            double expected = 5;
+            
 
             //act
-            double actual = Calculator.Add(3, 2);
+            double actual = Calculator.Add(x,y);
 
             //assert
             Assert.Equal(expected, actual);
